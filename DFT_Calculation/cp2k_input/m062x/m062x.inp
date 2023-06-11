@@ -1,0 +1,146 @@
+&GLOBAL
+  PROJECT M062X
+  PRINT_LEVEL LOW
+  RUN_TYPE ENERGY_FORCE
+&END GLOBAL
+
+&FORCE_EVAL
+  METHOD Quickstep
+  &PRINT
+    &FORCES ON
+    &END FORCES
+  &END PRINT  
+  &SUBSYS
+    &CELL
+      A    12.02800000     0.00000000     0.00000000
+      B     0.00000000    12.02800000     0.00000000
+      C     0.00000000     0.00000000    12.02800000
+      PERIODIC XYZ #Direction of applied PBC (geometry aspect)
+    &END CELL
+	&TOPOLOGY
+	  COORD_FILE_FORMAT XYZ
+	  COORD_FILE_NAME ../geo.xyz
+	&END TOPOLOGY
+    &KIND O    
+      ELEMENT O 
+      BASIS_SET QZV3P-GTH-q6
+      BASIS_SET AUX_FIT admm-dzp-q6
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND H    
+      ELEMENT H 
+      BASIS_SET QZV3P-GTH-q1
+      BASIS_SET AUX_FIT admm-dzp-q1
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND N    
+      ELEMENT N 
+      BASIS_SET QZV3P-GTH-q5
+      BASIS_SET AUX_FIT admm-dzp-q5
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND C    
+      ELEMENT C 
+      BASIS_SET QZV3P-GTH-q4
+      BASIS_SET AUX_FIT admm-dzp-q4
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND Na   
+      ELEMENT Na
+      BASIS_SET QZV3P-GTH-q9
+      BASIS_SET AUX_FIT admm-dzp-q9
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND Cl   
+      ELEMENT Cl
+      BASIS_SET QZV3P-GTH-q7
+      BASIS_SET AUX_FIT admm-dzp-q7
+      POTENTIAL GTH-PBE
+    &END KIND	
+  &END SUBSYS
+
+  &DFT
+    BASIS_SET_FILE_NAME  GTH_BASIS_SETS
+    BASIS_SET_FILE_NAME  BASIS_ADMM_UZH
+    POTENTIAL_FILE_NAME  POTENTIAL
+    WFN_RESTART_FILE_NAME ../pbe/PBE-RESTART.wfn
+    CHARGE    0       
+    MULTIPLICITY    1
+    &QS
+      EPS_DEFAULT 1.0E-11 
+      EPS_PGF_ORB 1E-12   
+    &END QS
+    &POISSON
+      PERIODIC XYZ 
+      PSOLVER PERIODIC 
+    &END POISSON
+    &AUXILIARY_DENSITY_MATRIX_METHOD
+      METHOD BASIS_PROJECTION 
+      ADMM_PURIFICATION_METHOD MO_DIAG
+    &END AUXILIARY_DENSITY_MATRIX_METHOD
+    &XC
+	  &XC_FUNCTIONAL
+	  	&LIBXC
+	  		FUNCTIONAL MGGA_C_M06_2X
+	  	&END LIBXC
+	  	&LIBXC
+	  		FUNCTIONAL HYB_MGGA_X_M06_2X 
+	  	&END LIBXC
+	  &END XC_FUNCTIONAL
+      &HF
+        FRACTION 0.54 
+        &SCREENING
+          EPS_SCHWARZ 1E-10 
+          SCREEN_ON_INITIAL_P T 
+        &END SCREENING
+        &INTERACTION_POTENTIAL
+          POTENTIAL_TYPE TRUNCATED
+          CUTOFF_RADIUS 6.0 
+        &END INTERACTION_POTENTIAL
+        &MEMORY
+          MAX_MEMORY 3000 
+          EPS_STORAGE_SCALING 0.1
+        &END MEMORY
+      &END HF
+    &END XC
+    &MGRID
+      CUTOFF  1000
+      REL_CUTOFF  70
+    &END MGRID
+    &SCF
+      MAX_SCF 50 
+      EPS_SCF 1.0E-07 
+      SCF_GUESS RESTART 
+      &OT
+        PRECONDITIONER FULL_ALL 
+        MINIMIZER DIIS 
+        LINESEARCH 2PNT 
+      &END OT
+      &OUTER_SCF
+        MAX_SCF 10 
+        EPS_SCF 1.0E-07 
+      &END OUTER_SCF
+      &PRINT
+        &RESTART 
+          BACKUP_COPIES 0 
+        &END RESTART
+      &END PRINT
+    &END SCF
+	&LOCALIZE
+      METHOD CRAZY
+      EPS_LOCALIZATION 1.0E-8
+      !EPS_OCCUPATION 1
+      &PRINT
+        ! Output the Wannier functions as cube-files
+        !&WANNIER_CUBES
+        !&END WANNIER_CUBES
+        ! Output the centers of all Wannier functions as xyz-file
+        &WANNIER_CENTERS
+           IONS+CENTERS .TRUE.
+        &END WANNIER_CENTERS
+        &WANNIER_SPREADS
+        &END WANNIER_SPREADS
+      &END PRINT
+    &END LOCALIZE
+  &END DFT
+&END FORCE_EVAL
