@@ -6,8 +6,10 @@ Intramolecular and water mediated tautomerism of solvated glycine (Under Review)
 # Toturials
 
 [From DFT to DeePKS to DeePMD | DeePKS Basics](https://nb.bohrium.dp.tech/detail/8742877753)
+
 [From DFT to DeePKS to DeePMD | DeePKS Toturials](https://nb.bohrium.dp.tech/detail/7144731675)
-Note: The above two web links have Chinese to English translation.
+
+Note: The above two web links have Chinese to English translations.
 
 # Packages Used
 
@@ -16,11 +18,11 @@ Requiring the installation of the [OPES](https://www.plumed.org/doc-v2.8/user-do
 To use additional Voronoi CVs code, put the three .cpp files above into /your_plumed_path/plumed/src/colvar, and then compile plumed.
 
 ## 2. deepmd-kit_v2.1.5
-(integrated with lammps and plumed)
+Incorporating lammps and plumed
 
 ## 3. deepks-kit_v0.1
 
 ## 4. abacus_v3.0.5
 
 ## 5. cp2k_v9.1
-incorporates plumed
+Incorporating plumed
