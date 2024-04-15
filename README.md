@@ -9,7 +9,11 @@ Intramolecular and water mediated tautomerism of solvated glycine (Under Review)
 
 [From DFT to DeePKS to DeePMD | DeePKS Toturials](https://nb.bohrium.dp.tech/detail/7144731675)
 
-Note: The above two web links have Chinese to English translations.
+[OPES (on-the-fly probability enhanced sampling)](https://bohrium.dp.tech/notebooks/9874998164)
+
+[Voronoi CVs for enhanced sampling autoionization and tautomerism](https://bohrium.dp.tech/notebooks/83327491785)
+
+Note: The above web links have Chinese to English translations.
 
 # Packages Used
 
