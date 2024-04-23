@@ -20,7 +20,7 @@ Note: The above web links have Chinese to English translations.
 
 # Dataset
 
-The dataset for training the DP model is uploaded to [AIS Square](https://www.aissquare.com/datasets/detail?pageType=datasets&name=M06-2X_C2H5O2N_H2O&id=238).
+The dataset for training the DP model is uploaded to [AIS Square](https://www.aissquare.com/datasets/detail?pageType=datasets&name=M06-2X_C2H5O2N_H2O&id=238) and [Google Drive](https://drive.google.com/drive/folders/1SLuqSO00_kIsGftYd241bccZFbtmm_S4?usp=sharing).
 
 # Packages Used
 
