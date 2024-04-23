@@ -1,0 +1,57 @@
+# vim:ft=plumed
+#RESTART #allows per-action setting of restart
+UNITS LENGTH=A
+
+GlyN:      GROUP ATOMS=385      
+GlyOhasH:  GROUP ATOMS=391      
+GlyOnotH:  GROUP ATOMS=393
+WaterO:    GROUP ATOMS=1-382:3
+#GlyC:     GROUP ATOMS=387,388  #H=389,390
+AllH:     GROUP ATOMS=2-383:3,3-384:3,389,390,386,392,394
+GlyH:      GROUP ATOMS=386,392,394
+WaterH:    GROUP ATOMS=2-383:3,3-384:3
+
+d05:   VORONOID2  GROUPA=WaterO,GlyN,GlyOhasH,GlyOnotH GROUPB=WaterH,GlyH NRX=3 LAMBDA=-5    D_0=2 D_1=2 D_2=0.5 D_3=0.5 NLIST NL_CUTOFF=2.4 NL_STRIDE=1
+s05:   VORONOIS1  GROUPA=WaterO,GlyN,GlyOhasH,GlyOnotH GROUPB=WaterH,GlyH NRX=3 LAMBDA=-5    D_0=256     D_1=3           NLIST NL_CUTOFF=2.4 NL_STRIDE=1
+
+#step(x) is defined as 1 when x is positive and 0 when x is negative
+#kernels are deposited when 0
+#target: CUSTOM ARG=s05 FUNC=step(x-0.7)  PERIODIC=NO # n&z -> cation
+#target: CUSTOM ARG=s05 FUNC=step(-x-0.7) PERIODIC=NO # n&z -> anion
+#target:  CUSTOM ARG=d05 FUNC=step(x-0.4)  PERIODIC=NO # n -> z
+target: CUSTOM ARG=d05 FUNC=step(-x+1.4) PERIODIC=NO # z -> n
+
+OPES_METAD ...
+   LABEL=opes
+   ARG=s05,d05
+   FILE=HILLS
+   TEMP=300
+   PACE=500
+   BARRIER=45
+   RESTART=NO
+   EXCLUDED_REGION=target   
+  #SIGMA_MIN=0.01,0.01,0.001
+  #STATE_RFILE=state.data    
+  #STATE_WFILE=STATE   
+  #STATE_WSTRIDE=5000 
+  #STORE_STATES
+  #WALKERS_MPI
+... OPES_METAD 
+
+COMMITTOR ...
+   ARG=d05
+   STRIDE=2000
+   BASIN_LL1=-0.8
+   BASIN_UL1=0.6
+   FILE=COMMITTOR_FILE
+... COMMITTOR
+
+FLUSH STRIDE=100
+PRINT ...
+ ARG=*
+ STRIDE=1
+ FILE=COLVAR
+ RESTART=NO
+... PRINT
+
+ENDPLUMED
