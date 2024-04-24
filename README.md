@@ -18,9 +18,11 @@ Intramolecular and water mediated tautomerism of solvated glycine
 
 Note: The above web links have Chinese to English translations.
 
-# Dataset
+# Dataset and model
 
-The dataset for training the DP model is uploaded to [AIS Square](https://www.aissquare.com/datasets/detail?pageType=datasets&name=M06-2X_C2H5O2N_H2O&id=238) and [Google Drive](https://drive.google.com/drive/folders/1SLuqSO00_kIsGftYd241bccZFbtmm_S4?usp=sharing).
+The dataset for training the DP model is uploaded to [AIS Square](https://www.aissquare.com/datasets/detail?pageType=datasets&name=M06-2X_C2H5O2N_H2O&id=238) and [Google Drive](https://drive.google.com/drive/folders/1SLuqSO00_kIsGftYd241bccZFbtmm_S4?usp=drive_link).
+
+The compressed DP model is uploaded to [AIS Square](https://www.aissquare.com/models/detail?pageType=models&name=M06-2X_C2H5O2N_H2O&id=241) and [Google Drive](https://drive.google.com/drive/folders/1SLuqSO00_kIsGftYd241bccZFbtmm_S4?usp=drive_link).
 
 # Packages Used
 
