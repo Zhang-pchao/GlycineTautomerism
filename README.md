@@ -1,10 +1,6 @@
 # Paper Title
 
-Intramolecular and water mediated tautomerism of solvated glycine 
-
-[JCIM](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00273)
-
-[arXiv](https://arxiv.org/abs/2311.05917)
+Intramolecular and water mediated tautomerism of solvated glycine [JCIM](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00273) [arXiv](https://arxiv.org/abs/2311.05917)
 
 # Toturials
 
