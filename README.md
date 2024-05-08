@@ -27,7 +27,7 @@ Requiring the installation of the [OPES](https://www.plumed.org/doc-v2.8/user-do
 To use additional Voronoi CVs code, put the three .cpp files above into /your_plumed_path/plumed/src/colvar, and then compile plumed.
 
 ## 2. deepmd-kit_v2.1.5
-Incorporating lammps and plumed
+Incorporating lammps and plumed, follow [plumed-feedstock](https://github.com/Zhang-pchao/plumed-feedstock/tree/devel) to overlay default plumed version.
 
 ## 3. deepks-kit_v0.1
 
