@@ -24,8 +24,8 @@ The compressed DP model is uploaded to [AIS Square](https://www.aissquare.com/mo
 
 ## 1. plumed_v2.8.1_patch
 Requiring the installation of the [OPES](https://www.plumed.org/doc-v2.8/user-doc/html/_o_p_e_s.html) module. 
-To use additional Voronoi CVs code, put the three .cpp files above into /your_plumed_path/plumed/src/colvar, and then compile plumed.
-
+To use additional Voronoi CVs code, put the three .cpp files above into /your_plumed_path/plumed/src/colvar, and then compile plumed. 
+The Voronoi CV VORONOID2.cpp, VORONOIS1.cpp, VORONOIC0.cpp code files are linked to CVs named s_d, s_p, s_a as illustrated in the [paper](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00273) and [SI](https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00273/suppl_file/ci4c00273_si_001.pdf).
 ## 2. deepmd-kit_v2.1.5
 Incorporating lammps and plumed, follow [plumed-feedstock](https://github.com/Zhang-pchao/plumed-feedstock/tree/devel) to overlay default plumed version.
 
