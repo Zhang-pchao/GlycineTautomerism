@@ -22,7 +22,7 @@ mass            2 15.999
 mass            3 14.007
 mass            4 12.011
 
-pair_style      deepmd  frozen_model.pb
+pair_style      deepmd  frozen_model.pb # frozen_model_compressed.pb model is much faster 
 pair_coeff      * *
 
 thermo_style    custom step temp density pe ke etotal vol press
