@@ -18,7 +18,22 @@
   - More Voronoi CVs can be utilized for the [water autoionization](https://github.com/Zhang-pchao/OilWaterInterface/tree/main).
 
 ### 2. deepmd-kit_v2.1.5
-  - Incorporating lammps and plumed, follow [plumed-feedstock](https://github.com/Zhang-pchao/plumed-feedstock/tree/devel) to overlay default plumed version or use [LOAD](https://www.plumed.org/doc-v2.8/user-doc/html/_l_o_a_d.html) command.
+
+- **Re-compile PLUMED**  
+  Incorporate LAMMPS and PLUMED by following the [plumed-feedstock](https://github.com/Zhang-pchao/plumed-feedstock/tree/devel) recipe to overlay the default PLUMED version.
+
+- **No Re-compile (quick test)**  
+  If you do **not** want to re-compile PLUMED, use the [`LOAD`](https://www.plumed.org/doc-v2.8/user-doc/html/_l_o_a_d.html) command at runtime and update the header paths in the relevant `.cpp` files:
+
+  ```cpp
+  #include "/your_path/plumed_build-prefix/include/plumed/tools/NeighborList.h"
+  #include "/your_path/plumed_build-prefix/include/plumed/tools/Communicator.h"
+  #include "/your_path/plumed_build-prefix/include/plumed/tools/OpenMP.h"
+  #include "/your_path/plumed_build-prefix/include/plumed/colvar/Colvar.h"
+  #include "/your_path/plumed_build-prefix/include/plumed/tools/Matrix.h"
+  #include "/your_path/plumed_build-prefix/include/plumed/colvar/ActionRegister.h"
+
+  Before running the job, export the library path: `export LD_LIBRARY_PATH=/your_path/plumed_build-prefix/lib:$LD_LIBRARY_PATH`
 
 ### 3. deepks-kit_v0.1
 
