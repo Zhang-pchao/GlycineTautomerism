@@ -27,12 +27,12 @@
 ):
 
   ```cpp
-  #include "/your_path/plumed_build-prefix/include/plumed/tools/NeighborList.h"
-  #include "/your_path/plumed_build-prefix/include/plumed/tools/Communicator.h"
-  #include "/your_path/plumed_build-prefix/include/plumed/tools/OpenMP.h"
-  #include "/your_path/plumed_build-prefix/include/plumed/colvar/Colvar.h"
-  #include "/your_path/plumed_build-prefix/include/plumed/tools/Matrix.h"
-  #include "/your_path/plumed_build-prefix/include/plumed/colvar/ActionRegister.h"
+  #include "/your_path_plumed/tools/NeighborList.h"
+  #include "/your_path_plumed/tools/Communicator.h"
+  #include "/your_path_plumed/tools/OpenMP.h"
+  #include "/your_path_plumed/colvar/Colvar.h"
+  #include "/your_path_plumed/tools/Matrix.h"
+  #include "/your_path_plumed/colvar/ActionRegister.h"
 
 ### 3. deepks-kit_v0.1
 
