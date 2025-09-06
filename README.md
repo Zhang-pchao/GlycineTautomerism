@@ -25,14 +25,6 @@
 - **No Re-compile (quick test)**  
   If you do **not** want to re-compile PLUMED, use the [LOAD](https://www.plumed.org/doc-v2.8/user-doc/html/_l_o_a_d.html) command at runtime.
 
-  ```cpp
-  #include "/your_path_plumed/tools/NeighborList.h"
-  #include "/your_path_plumed/tools/Communicator.h"
-  #include "/your_path_plumed/tools/OpenMP.h"
-  #include "/your_path_plumed/colvar/Colvar.h"
-  #include "/your_path_plumed/tools/Matrix.h"
-  #include "/your_path_plumed/colvar/ActionRegister.h"
-
 ### 3. deepks-kit_v0.1
 
 ### 4. abacus_v3.0.5
