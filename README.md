@@ -10,10 +10,11 @@ This repository collects the input files, trained models, and analysis utilities
 - [Voronoi CVs for enhanced sampling autoionization and tautomerism](https://bohrium.dp.tech/notebooks/83327491785)
 - *Note:* The above notebook links offer Chinese-to-English translations.
 
-## Dataset and Model Availability
+## Dataset, Model, and MD trajectory Availability
 
 - The dataset used to train the DeePMD model is hosted on [AIS Square](https://www.aissquare.com/datasets/detail?pageType=datasets&name=M06-2X_C2H5O2N_H2O&id=238) and mirrored on [Zenodo](https://zenodo.org/records/14309264).
 - The compressed DeePMD model is distributed through [AIS Square](https://www.aissquare.com/models/detail?pageType=models&name=M06-2X_C2H5O2N_H2O&id=241) and [Zenodo](https://zenodo.org/records/14309264).
+- glycine_10_12ns.lammpstrj.xz on [Zenodo](https://zenodo.org/records/20265544) contains a 2‑ns segment of the glycine MD trajectory (10–12 ns) with element indices 1=H, 2=O, 3=N, 4=C, output every 0.01 fs.
 
 ## Software Packages Used
 
