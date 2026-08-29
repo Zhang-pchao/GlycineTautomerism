@@ -1,3 +1,5 @@
+
+```markdown
 # Glycine Tautomerism Repository
 
 This repository collects the input files, trained models, and analysis utilities used in the study of intramolecular and water-mediated tautomerism of solvated glycine. It is meant to guide readers from the original **ab initio** data production through DeePKS/DeePMD model training and the enhanced-sampling workflows discussed in the publication linked below.
@@ -22,7 +24,7 @@ This repository collects the input files, trained models, and analysis utilities
 
 - Requires enabling the [OPES module](https://www.plumed.org/doc-v2.8/user-doc/html/_o_p_e_s.html).
 - To activate the additional Voronoi collective variables (CVs), copy the three `.cpp` files provided in this repository to `/your_plumed_path/plumed/src/colvar` and recompile PLUMED.
-- The Voronoi CV implementations `VORONOID2.cpp`, `VORONOIS1.cpp`, and `VORONOIC0.cpp` map to the CVs `s_d`, `s_p`, and `s_a` described in the [paper](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00273) and its [supporting information](https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00273/suppl_file/ci4c00273_si_001.pdf). Additional [Voronoi CVs](https://github.com/Zhang-pchao/OilWaterInterface/tree/main/Ion_Diffusion_Coefficient) can be used to compute diffusion coefficients for H₃O⁺ or OH⁻ ions.
+- The Voronoi CV implementations `VoronoiD2.cpp`, `VoronoiS1.cpp`, and `VoronoiC0.cpp` map to the CVs `s_d`, `s_p`, and `s_a` described in the [paper](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00273) and its [supporting information](https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00273/suppl_file/ci4c00273_si_001.pdf). Additional [Voronoi CVs](https://github.com/Zhang-pchao/OilWaterInterface/tree/main/Ion_Diffusion_Coefficient) can be used to compute diffusion coefficients for H₃O⁺ or OH⁻ ions.
 - More Voronoi CV examples for water autoionization are available [here](https://github.com/Zhang-pchao/OilWaterInterface/tree/main).
 
 ### deepmd-kit v2.1.5
@@ -76,4 +78,5 @@ Intramolecular and water mediated tautomerism of solvated glycine. [J. Chem. Inf
   pages        = {3599--3604},
   doi          = {10.1021/acs.jcim.4c00273},
 }
+```
 ```
